@@ -1,0 +1,8 @@
+<!-- form for new pin (or Interest)-->
+<%= simple_form_for @pinture, remote: true do |f| %>
+  <%= f.input :photo %>
+  <%= f.input :link, placeholder: "Must begin with http://" %>
+  <%= f.input :comment %>
+  <%= f.input :user_id, as: :hidden, input_html: {value: @current_user.id} %>
+  <%= f.submit "Add", class: "btn btn-primary" %>
+<% end %>

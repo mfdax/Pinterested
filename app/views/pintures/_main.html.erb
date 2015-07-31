@@ -1,0 +1,24 @@
+<div style="margin:10px" class="nav-btn" id="smaller-margin">
+  <%= link_to "Log Out", sign_out_path, class: "btn btn-primary"  %>
+</div>
+<h1 class="main">Show You Are Pinterested</h1>
+
+<div style="margin:20px;">
+  <%= link_to "New Pinture", new_pinture_path, remote: true, class: "btn btn-primary"  %>
+</div>
+
+<%= paginate @pintures %>
+<div class="pics">
+    <div class="row">
+      <% @pintures.each do |pinture| %>
+        <div class="col-sm-12 col-md-3 icon">
+          <%= link_to pinture_modal_path(id: pinture.id), remote: true do %>
+            <%= image_tag pinture.photo.url(:pinture), class: 'img-rounded img-responsive' %>
+            <p>Pinned by <%= pinture.user.username %> <%= time_ago_in_words pinture.created_at %> ago</p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+</div>
+
+<%= paginate @pintures %>

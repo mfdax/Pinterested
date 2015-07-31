@@ -1,0 +1,8 @@
+<h2>Sign Up</h2>
+<%= simple_form_for @user, remote: true do |f| %>
+  <%= f.input :email %>
+  <%= f.input :username %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation, label: "Confirm password" %>
+  <%= f.submit "Sign Up", class: "btn btn-primary" %>
+<% end %>

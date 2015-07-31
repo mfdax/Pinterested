@@ -1,0 +1,7 @@
+<% if @pinture.save %>
+  $('#pinture-modal').modal("hide");
+  $('.container').html("<%= j render partial: 'main' %>");
+<% else %>
+    $('#pinture-modal .modal-title').html("New Interest");
+    $('#pinture-modal .modal-body').html("<%= j render partial: 'new_pinture' %>");
+<% end %>

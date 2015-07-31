@@ -1,0 +1,10 @@
+<div class="center-block">
+  <%= image_tag @pinture.photo.url(:pinture), class: "img img-responsive" %>
+  <a href="<%= @pinture.link %>" target="_blank"><%= @pinture.link %></a>
+  <h4>
+      <%= @pinture.comment %>
+  </h4>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+</div>

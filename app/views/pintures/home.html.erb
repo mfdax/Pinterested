@@ -1,0 +1,10 @@
+<% if @current_user.nil? %>
+  <div class="welcome">
+      <h1>Are You Pinterested?</h1>
+
+      <%= link_to "Sign Up Here", sign_up_path, remote: true, class: "btn btn-danger"  %>
+       or <%= link_to "Sign In Here", sign_in_path, remote: true, class: "btn btn-danger" %>
+  </div>
+<% else %>
+  <%= render partial: 'main' %>
+<% end %>
